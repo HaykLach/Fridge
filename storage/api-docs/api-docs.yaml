@@ -1,0 +1,33 @@
+openapi: 3.0.3
+
+info:
+  title: OpenAPI HttpFoundation Testing Laravel Example
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:8000/api
+
+paths:
+  '/getPrice':
+    get:
+      responses:
+        '200':
+          description: Creates reservation and calculates the price
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - weight
+                  - temperature
+                  - hours
+                properties:
+                  weight:
+                    type: int
+                    example: 200
+                  temperature:
+                    type: int
+                    example: -2
+                  hours:
+                    type: string
+                    example: 14
